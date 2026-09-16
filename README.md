@@ -24,7 +24,7 @@ The `calculate_discount()` function applies a **15% standard discount**.
 
 ```python
 def calculate_discount(price):
-    return price * 0.15
+    return price*0.15
 ```
 
 ## Testing
@@ -33,7 +33,7 @@ The project includes a test file using Python assertions.
 
 ```python
 def test_discount():
-    assert calculate_discount(100) == 10
+    assert calculate_discount(100)==15
 ```
 
 ## Git Workflow
