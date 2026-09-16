@@ -20,11 +20,14 @@ SCM-Demo/
 ```
 ## Current Implementation
 
-The `calculate_discount()` function applies a **15% standard discount**.
+The `calculate_discount()` function applies a **10% standard discount** and **20% member-specific discount**.
 
 ```python
-def calculate_discount(price):
-    return price * 0.15
+def calculate_discount(price, is_member):
+    if is_member:
+        return price*0.20
+
+    return price*0.10
 ```
 
 ## Testing
@@ -32,8 +35,12 @@ def calculate_discount(price):
 The project includes a test file using Python assertions.
 
 ```python
-def test_discount():
-    assert calculate_discount(100) == 10
+def test_regular_customer():
+    assert calculate_discount(100, False)==10
+
+
+def test_member_customer():
+    assert calculate_discount(100, True)==20
 ```
 
 ## Git Workflow
